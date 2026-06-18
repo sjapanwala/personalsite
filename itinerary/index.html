@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Japan Trip — Jul 25 – Aug 6, 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1a1a;
+      --ink-mid: #444;
+      --ink-light: #888;
+      --ink-faint: #bbb;
+      --paper: #fafaf7;
+      --surface: #ffffff;
+      --rule: #e8e6e0;
+      --tokyo: #c0392b;
+      --kyoto: #27706b;
+      --osaka: #c47c20;
+      --must: #c0392b;
+      --tip: #c47c20;
+      --transit: #2c5f8a;
+      --nintendo: #27706b;
+      --hotel-accent: #8b6f47;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--ink);
+      color: #fff;
+      padding: 64px 40px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40%;
+      background: repeating-linear-gradient(45deg,
+          transparent,
+          transparent 2px,
+          rgba(255, 255, 255, 0.03) 2px,
+          rgba(255, 255, 255, 0.03) 4px);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.45);
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .hero-stat-val {
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .hero-stat-lbl {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.45);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* CITY PILLS */
+    .city-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+      margin-top: -1px;
+    }
+
+    .dot-tokyo {
+      background: var(--tokyo);
+    }
+
+    .dot-kyoto {
+      background: var(--kyoto);
+    }
+
+    .dot-osaka {
+      background: var(--osaka);
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* SECTION HEADERS */
+    .city-section {
+      margin-top: 0;
+    }
+
+    .city-banner {
+      padding: 28px 40px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .city-banner.tokyo-banner {
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    .city-banner.kyoto-banner {
+      background: #0f3331;
+      color: #fff;
+    }
+
+    .city-banner.osaka-banner {
+      background: #3d2200;
+      color: #fff;
+    }
+
+    .city-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .city-banner-dates {
+      font-size: 13px;
+      opacity: 0.5;
+    }
+
+    .city-banner-nights {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.4;
+      margin-top: 2px;
+    }
+
+    /* DAYS */
+    .days-container {
+      padding: 0 40px 8px;
+      background: var(--surface);
+    }
+
+    .day {
+      border-bottom: 1px solid var(--rule);
+      padding: 24px 0;
+    }
+
+    .day:last-child {
+      border-bottom: none;
+    }
+
+    .day-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .day-num {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      min-width: 36px;
+    }
+
+    .day-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .day-date {
+      font-size: 12px;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-left: 48px;
+    }
+
+    .tl-item {
+      display: flex;
+      gap: 0;
+      position: relative;
+    }
+
+    .tl-left {
+      width: 60px;
+      flex-shrink: 0;
+      padding-right: 14px;
+      padding-top: 2px;
+      text-align: right;
+      position: relative;
+    }
+
+    .tl-time {
+      font-size: 10px;
+      color: var(--ink-faint);
+      white-space: nowrap;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .tl-spine {
+      width: 16px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 14px;
+    }
+
+    .tl-dot-outer {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 1.5px solid var(--ink-faint);
+      background: var(--surface);
+      flex-shrink: 0;
+      margin-top: 3px;
+      z-index: 1;
+    }
+
+    .tl-dot-outer.dot-must {
+      border-color: var(--must);
+      background: var(--must);
+    }
+
+    .tl-dot-outer.dot-transit {
+      border-color: var(--transit);
+      background: var(--transit);
+    }
+
+    .tl-dot-outer.dot-nintendo {
+      border-color: var(--nintendo);
+      background: var(--nintendo);
+    }
+
+    .tl-line-seg {
+      width: 1px;
+      background: var(--rule);
+      flex: 1;
+      min-height: 12px;
+    }
+
+    .tl-body {
+      flex: 1;
+      padding-bottom: 16px;
+    }
+
+    .tl-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 3px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tl-desc {
+      font-size: 12px;
+      color: var(--ink-mid);
+      line-height: 1.65;
+    }
+
+    /* BADGES */
+    .badge {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 3px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .b-must {
+      background: #fcecea;
+      color: #9b2b1f;
+    }
+
+    .b-tip {
+      background: #fdf3e3;
+      color: #8a5718;
+    }
+
+    .b-transit {
+      background: #e8f0f8;
+      color: #1e4d75;
+    }
+
+    .b-nintendo {
+      background: #e4f4f0;
+      color: #1a5550;
+    }
+
+    .b-splurge {
+      background: #f3eef8;
+      color: #5b3a82;
+    }
+
+    .b-book {
+      background: #fff8e1;
+      color: #7a5c00;
+    }
+
+    /* TRANSIT BRIDGE */
+    .transit-bridge {
+      background: #f0f0ed;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--ink-mid);
+    }
+
+    .transit-bridge-icon {
+      width: 28px;
+      height: 28px;
+      background: var(--transit);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .transit-bridge-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: none;
+      stroke: #fff;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .transit-bridge strong {
+      color: var(--ink);
+    }
+
+    /* HOTELS SECTION */
+    .hotels-section {
+      background: var(--paper);
+      padding: 40px;
+      border-top: 2px solid var(--ink);
+    }
+
+    .hotels-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .hotels-section-sub {
+      font-size: 12px;
+      color: var(--ink-light);
+      margin-bottom: 32px;
+    }
+
+    .hotels-city {
+      margin-bottom: 32px;
+    }
+
+    .hotels-city-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hotels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .hotel-card {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 6px;
+      padding: 16px;
+      position: relative;
+    }
+
+    .hotel-card.top-pick {
+      border-color: var(--hotel-accent);
+    }
+
+    .hotel-pick-tag {
+      position: absolute;
+      top: -1px;
+      right: 12px;
+      background: var(--hotel-accent);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .hotel-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      padding-right: 8px;
+    }
+
+    .hotel-area {
+      font-size: 11px;
+      color: var(--ink-light);
+      margin-bottom: 8px;
+    }
+
+    .hotel-price {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .hotel-price span {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--ink-light);
+    }
+
+    .hotel-desc {
+      font-size: 11px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .hotel-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    .hotel-tag {
+      font-size: 10px;
+      background: #f2f0eb;
+      color: var(--ink-mid);
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+
+    /* BOOKING CHECKLIST */
+    .booking-section {
+      background: var(--ink);
+      color: #fff;
+      padding: 36px 40px;
+    }
+
+    .booking-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .booking-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    .booking-check {
+      width: 16px;
+      height: 16px;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 3px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .booking-text {
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.5;
+    }
+
+    .booking-text strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    /* TIPS */
+    .tips-bar {
+      background: #1a1a1a;
+      padding: 20px 40px;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      border-top: 1px solid #333;
+    }
+
+    .tip-item {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .tip-item strong {
+      color: rgba(255, 255, 255, 0.85);
+      display: block;
+      margin-bottom: 2px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    @media (max-width: 600px) {
+
+      .hero,
+      .days-container,
+      .city-banner,
+      .transit-bridge,
+      .hotels-section,
+      .booking-section,
+      .tips-bar {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .timeline {
+        padding-left: 0;
+      }
+
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hotels-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-meta {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Trip Itinerary · Canada → Japan</div>
+    <h1>Tokyo, Kyoto<br><span>&</span> Osaka</h1>
+    <div class="hero-meta">
+      <div class="hero-stat"><span class="hero-stat-val">Jul 25</span><span class="hero-stat-lbl">Arrival</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">Aug 6</span><span class="hero-stat-lbl">Departure</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">12</span><span class="hero-stat-lbl">Nights</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">3</span><span class="hero-stat-lbl">Cities</span></div>
+      <div class="hero-stat"><span class="hero-stat-val">2</span><span class="hero-stat-lbl">Theme Parks</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ TOKYO ═══════════════════════════════ -->
+  <div class="city-section">
+    <div class="city-banner tokyo-banner">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:0.4;margin-bottom:6px">City 01
+        </div>
+        <h2>Tokyo</h2>
+        <div class="city-banner-nights">5 nights</div>
+      </div>
+      <div class="city-banner-dates">Jul 25 (Fri) – Jul 30 (Thu)</div>
+    </div>
+
+    <div class="days-container">
+
+      <!-- DAY 1 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 1</span>
+          <span class="day-title">Arrival</span>
+          <span class="day-date">Friday, Jul 25</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">Afternoon</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-transit"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Land + transfer to hotel <span class="badge b-transit">Transit</span></div>
+              <div class="tl-desc">Narita: Narita Express to Shinjuku (~55 min, ¥3,070). Haneda: Keikyu Line to
+                Shinagawa (~15 min, ¥330). Check in, freshen up. Recommended neighbourhood: Shinjuku or Shibuya for
+                central access all week.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">6:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Omoide Yokocho — Memory Lane</div>
+              <div class="tl-desc">Tiny yakitori stalls spilling smoke into narrow alleyways just outside Shinjuku
+                Station west exit. Order skewers and cold Sapporo. Dirt cheap and atmospheric — the perfect first night
+                in Tokyo.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Early night — beat jet lag</div>
+              <div class="tl-desc">Big days ahead. Target 10pm local time to reset your clock. The next 11 days will be
+                exhausting in the best way.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 2</span>
+          <span class="day-title">Shibuya + Harajuku</span>
+          <span class="day-date">Saturday, Jul 26</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Meiji Shrine</div>
+              <div class="tl-desc">Best in the morning before heat. Forested walk leads to a massive torii gate and a
+                serene Shinto shrine. Free entry. Takes ~45 min including the approach path.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Harajuku — Takeshita Street</div>
+              <div class="tl-desc">Quirky street fashion, crepe shops, candy stores. Wild people watching. Gets very
+                packed by noon so arriving at 10 is ideal. Ura-Harajuku back streets are more low-key and interesting
+                for actual fashion.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">12:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Omotesando lunch</div>
+              <div class="tl-desc">Tokyo's most architecturally interesting boulevard. Dozens of well-designed cafés.
+                Try Afuri ramen (light yuzu broth, popular with locals) or any of the smaller lunch spots off the main
+                drag.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">2:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Shibuya Crossing <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">Watch from street level first — stand on the island and let the crowd swirl around
+                you. Then head to Scramble Square Sky Lobby (47F, free observation area). Best crossing photos from the
+                2nd floor of Mag's Park in Shibuya Hikarie building.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">4:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Shibuya 109 + side streets</div>
+              <div class="tl-desc">Browse the iconic fashion tower and the smaller boutiques behind it — record shops,
+                vintage stores, sneaker spots. The streets between Shibuya and Daikanyama are excellent for walking.
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Dinner + rooftop drinks</div>
+              <div class="tl-desc">Ichiran ramen (famous solo booths — each person eats in a private cubicle, order by
+                form) or Gyukatsu Motomura for crispy beef cutlet you cook yourself on a hot stone. After: rooftop bar
+                at Cerulean Tower for city views.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 3</span>
+          <span class="day-title">Akihabara + Shinjuku Night</span>
+          <span class="day-date">Sunday, Jul 27</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Akihabara Electric Town <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">The world's largest consumer electronics district. Start at Yodobashi Camera Akiba (9
+                floors — cameras, drones, components, everything). Then hit: Sofmap for second-hand electronics and
+                cameras, Super Potato for retro games and consoles (Famicom, Super Famicom, old handhelds), Akky
+                International for duty-free deals on cameras and lenses. The back alleys have small specialist shops for
+                cables, ICs, and niche components — genuinely unlike anything in Canada.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">1:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Lunch in Akihabara</div>
+              <div class="tl-desc">Try a maid café for exactly 30 min of cultural experience (Maidreamin is the most
+                mainstream entry point). Or just grab karaage lunch at one of the basement restaurants around the
+                station.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">3:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Ueno optional detour</div>
+              <div class="tl-desc">15 min walk from Akihabara. Tokyo National Museum (vast collection, worth 1.5h), Ueno
+                Park, Ameya-Yokocho open market street. Good cultural break if you're all teched out.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">6:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Shinjuku Kabukicho + Golden Gai</div>
+              <div class="tl-desc">Tokyo's entertainment district at night. Walk through the neon-drenched streets past
+                Kabukicho Tower. Then find Golden Gai — a labyrinth of 200+ bars, each seating 4–8 people. Every bar has
+                its own theme and personality. Pick one with a door that speaks to you and have two drinks there. The
+                most memorable night-out experience in Japan.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 4 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 4</span>
+          <span class="day-title">Tokyo Disneyland</span>
+          <span class="day-date">Tuesday, Jul 28</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-transit"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Depart for Maihama <span class="badge b-transit">Transit</span></div>
+              <div class="tl-desc">JR Keiyo Line from Tokyo Station to Maihama (~25 min). Walk to the gates. Queue forms
+                30–45 min before opening. Park opens 8am in summer — weekday but July is still busy.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Tokyo Disneyland — full day <span class="badge b-must">Must</span> <span
+                  class="badge b-book">Book tickets in advance</span></div>
+              <div class="tl-desc">Priority rides on entry: Big Thunder Mountain, Haunted Mansion, Space Mountain,
+                Splash Mountain. Use Disney Premier Access (paid, ¥1,500–2,000/ride) for top attractions — worth it in
+                summer. Must eat: Monte Cristo Sandwich at Café Orléans, churros, Queen of Hearts Banquet Hall for a
+                sit-down meal. Stay for the evening electrical parade (10pm) and fireworks. Last train back around
+                11:30pm.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 5 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 5</span>
+          <span class="day-title">Asakusa + Skytree + teamLab</span>
+          <span class="day-date">Wednesday, Jul 29</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Senso-ji Temple, Asakusa</div>
+              <div class="tl-desc">Tokyo's oldest and most visited temple. Go early before the crowds. Thunder Gate
+                (Kaminarimon) for the classic photo, then walk Nakamise-dori shopping street for souvenir shopping —
+                good prices here. Rickshaw rides available if you want the experience (~¥3,000 for 30 min).</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Tokyo Skytree <span class="badge b-book">Book timed entry</span></div>
+              <div class="tl-desc">634m — world's tallest tower. 5 min walk from Senso-ji. Two observation decks: Tembo
+                Deck (350m, ¥2,100) and Tembo Galleria (450m, +¥1,000). Book timed entry online to avoid queues. Glass
+                floor panels at 350m are worth it. Clear day = Mt. Fuji visible on the horizon.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">12:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Lunch — Sumida River area</div>
+              <div class="tl-desc">Good soba and tempura spots along the riverside between Asakusa and Skytree. Sit down
+                and rest — Disneyland was yesterday and you have teamLab this afternoon.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">3:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">teamLab Planets, Toyosu <span class="badge b-must">Must</span> <span
+                  class="badge b-book">Book 3+ weeks ahead</span></div>
+              <div class="tl-desc">Walk-through immersive digital art museum. You go barefoot — rooms with water floors,
+                infinite mirror ceilings, fields of floating flowers. Different from any museum you've been to. ~20 min
+                from Asakusa by metro. Sells out weeks in advance in summer. Pre-book at teamlab.art. Evening slot
+                recommended for the light experience.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Tsukiji Outer Market dinner</div>
+              <div class="tl-desc">Tsukiji is near Toyosu by taxi (~15 min). The outer market has excellent standing
+                sushi bars and grilled seafood stalls open into the evening. Great final Tokyo dinner.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 6 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 6</span>
+          <span class="day-title">Morning Tokyo → Shinkansen to Kyoto</span>
+          <span class="day-date">Thursday, Jul 30</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Tsukiji Outer Market breakfast</div>
+              <div class="tl-desc">Japan's most famous seafood market outer section opens at 5am. Fresh uni, tuna
+                sashimi, oysters, tamagoyaki (sweet rolled egg on a stick). The best breakfast of the trip. Get there
+                early — stalls can sell out by 9am.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-transit"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Shinkansen Nozomi — Tokyo → Kyoto <span class="badge b-transit">~2h 15min</span>
+              </div>
+              <div class="tl-desc">From Tokyo Station. Book reserved seats (included with JR Pass — do this at the
+                station on arrival day). Sit on row D or E, right side for a Mt. Fuji view ~45 min after departure on a
+                clear day. Buy an ekiben (station bento box) from the station shops before boarding — eating on the
+                shinkansen is part of the experience.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">1:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Arrive Kyoto — check in</div>
+              <div class="tl-desc">Stay near Gion or Kawaramachi for the best walking access. A traditional machiya
+                guesthouse (old townhouse) is worth the upgrade here — sets the tone for Kyoto immediately.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">2:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Nishiki Market</div>
+              <div class="tl-desc">Kyoto's Kitchen — a covered 5-block market dating to the 17th century. Try: yuzu
+                pickles, matcha mochi, fresh tofu skewers, dashi-marinated eggs. Closes around 6pm so go now, not later.
+                Great for afternoon snacking.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">5:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Gion evening walk</div>
+              <div class="tl-desc">Hanamikoji Street — walk slowly between 5:30–6:30pm. Best chance to spot geiko
+                (geisha) and maiko (apprentices) heading to evening engagements. No flash photography. Shimbashi area
+                for the lantern-lit canal path — one of the most photographed streets in Japan.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Pontocho Alley dinner</div>
+              <div class="tl-desc">One of Japan's most atmospheric dining streets — narrow lantern-lit alley parallel to
+                the Kamo River. Restaurants have kawayuka — riverside terraces over the water. Try kaiseki cuisine for a
+                proper introduction to Kyoto cooking. Budget ¥3,000–6,000/person for a set menu.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /days-container -->
+  </div><!-- /tokyo section -->
+
+  <!-- TRANSIT BRIDGE -->
+  <div class="transit-bridge">
+    <div class="transit-bridge-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </div>
+    <div><strong>Shinkansen Nozomi — Tokyo → Kyoto</strong> · ~2h 15min · JR Pass · Reserve seats at station on arrival
+      day</div>
+  </div>
+
+  <!-- ═══════════════════════════════ KYOTO ═══════════════════════════════ -->
+  <div class="city-section">
+    <div class="city-banner kyoto-banner">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:0.4;margin-bottom:6px">City 02
+        </div>
+        <h2>Kyoto</h2>
+        <div class="city-banner-nights">3 nights</div>
+      </div>
+      <div class="city-banner-dates">Jul 30 (Thu) – Aug 2 (Sat)</div>
+    </div>
+
+    <div class="days-container">
+
+      <!-- DAY 7 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 7</span>
+          <span class="day-title">Fushimi Inari + Arashiyama</span>
+          <span class="day-date">Friday, Jul 31</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">6:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Fushimi Inari Taisha <span class="badge b-must">Go at dawn — non-negotiable</span>
+              </div>
+              <div class="tl-desc">Arrive 6:30–7am. Thousands of vermilion torii gates winding up the mountain —
+                completely crowd-free at this hour, ethereal mist in the trees. Full summit hike: 2–3 hours (233m),
+                brings you back by ~9:30am before the heat becomes brutal. Minimum: hike 30–45 min to the upper viewing
+                area at Yotsutsuji (4-way intersection) for the best city views. The gate tunnels are fully shaded and
+                the early morning light through the orange wood is genuinely one of the best sights in Japan.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Rest + hotel breakfast</div>
+              <div class="tl-desc">You'll be hot and you've been hiking. Take an hour. Arashiyama in the afternoon is
+                better when the bamboo light is softer anyway.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">1:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Arashiyama Bamboo Grove <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">JR Sagano Line (~25 min, JR Pass). Walk the bamboo path — short (10 min) but
+                remarkable. Immediately after: Tenryu-ji Zen garden (¥500, one of Japan's finest moss gardens). Then
+                walk down to the Oi River — rent a rowboat for ¥1,200/hour or just walk the riverside.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">3:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Saga Toriimoto preserved street</div>
+              <div class="tl-desc">10 min walk from the bamboo grove. A preserved 19th century merchant street —
+                traditional sake shops, craft stores, matcha tea houses. Far fewer tourists than the main Arashiyama
+                strip and better for photos.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">6:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Return + Gion izakaya dinner</div>
+              <div class="tl-desc">Head back to central Kyoto. Izakaya dinner in Gion — grilled skewers, cold Sapporo,
+                small plates. Relaxed evening after a big day.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 8 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 8</span>
+          <span class="day-title">Golden Pavilion + Philosopher's Path + Kiyomizudera</span>
+          <span class="day-date">Saturday, Aug 1</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">9:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Kinkaku-ji — Golden Pavilion <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">Opens 9am — be there at opening. Gold leaf temple reflecting perfectly in the Mirror
+                Pond. Gets very crowded by 10:30am so this timing matters. The surrounding garden walk takes ~25 min.
+                ¥500 entrance.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Ryoan-ji Rock Garden</div>
+              <div class="tl-desc">15 min from Kinkaku-ji. The most famous dry rock garden in Japan — 15 stones arranged
+                so you can never see all 15 from a single viewpoint. Oddly compelling to stare at for 20 min. The large
+                moss garden behind the main hall is underrated and usually quieter. ¥600.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">12:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Philosopher's Path + lunch</div>
+              <div class="tl-desc">A 2km stone path along a cherry-tree-lined canal. Start at Ginkaku-ji (Silver
+                Pavilion, ¥500) and walk south. Dozens of small cafés and artisan workshops along the way — take your
+                time and duck into anything that looks interesting. Best shaded afternoon walk in Kyoto.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">2:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Nanzen-ji Temple</div>
+              <div class="tl-desc">End of the Philosopher's Path. Massive sanmon gate you can climb for views over the
+                trees. The highlight: a 19th century red brick aqueduct running directly through the temple grounds —
+                completely incongruous and weirdly beautiful. Sub-temple Tenjuan has one of Kyoto's best gardens. ¥600.
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">5:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Kiyomizudera at golden hour <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">Iconic wooden stage temple on a forested hillside — open late in summer. Walk up the
+                stone-paved Ninenzaka and Sannenzaka lanes lined with traditional shops (best souvenir shopping in
+                Kyoto). The main stage has sweeping city views best in golden hour. ¥400 entrance. Get matcha soft serve
+                from a vendor on the walk up.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Kawaramachi night — Japanese whisky bars</div>
+              <div class="tl-desc">Kyoto's nightlife district. Try Bar K6 or Zoetrope for an extraordinary Japanese
+                whisky selection. Highball culture is huge here — order a Yamazaki or Nikka Coffey Grain highball. Great
+                way to end Kyoto.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 9 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 9</span>
+          <span class="day-title">Morning Kyoto → Osaka</span>
+          <span class="day-date">Sunday, Aug 2</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:45 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Nijo Castle</div>
+              <div class="tl-desc">Former Tokugawa shogun residence — famous for its "nightingale floors" (boards
+                designed to squeak to alert against intruders). Ornate painted sliding doors inside, large stone garden.
+                Opens 8:45am. ~1.5h. ¥800.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">11:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-transit"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Check out + JR to Osaka <span class="badge b-transit">~30 min</span></div>
+              <div class="tl-desc">JR Kyoto–Osaka line (JR Pass) from Kyoto Station to Osaka Station. Check into hotel —
+                stay near Namba or Shinsaibashi for Dotonbori walking distance. Drop bags and head straight out.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">2:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Dotonbori first walk <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">The canal strip — Glico running man sign, giant crab and fugu signs, neon everywhere.
+                Best street food strip in Japan: takoyaki (octopus balls — get them from Aizuya, the original),
+                okonomiyaki (savory pancake, cook your own), kushikatsu (battered skewers — no double dipping the sauce,
+                it's a rule). Walk both sides of the canal completely.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">5:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Shinsaibashi shopping arcade</div>
+              <div class="tl-desc">600m covered shopping arcade — good for gifts and last-minute Japanese fashion
+                brands. Connects to Amerikamura (American Village) for streetwear and vintage. Great air-conditioned
+                break from the heat.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Osaka-style dinner — eat aggressively</div>
+              <div class="tl-desc">Osaka is Japan's food capital — locals call it "kuidaore" (eat until you drop). Try a
+                proper sit-down okonomiyaki restaurant where you cook on a table grill, or find a standing teppanyaki
+                spot in Dotonbori. Spend more on food here than anywhere else on the trip.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TRANSIT BRIDGE -->
+  <div class="transit-bridge">
+    <div class="transit-bridge-icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </div>
+    <div><strong>JR Kyoto Line — Kyoto → Osaka</strong> · ~30 min · JR Pass · Or Hankyu Railway (~¥400, no pass needed,
+      slightly faster)</div>
+  </div>
+
+  <!-- ═══════════════════════════════ OSAKA ═══════════════════════════════ -->
+  <div class="city-section">
+    <div class="city-banner osaka-banner">
+      <div>
+        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;opacity:0.4;margin-bottom:6px">City 03
+        </div>
+        <h2>Osaka</h2>
+        <div class="city-banner-nights">3 nights + departure</div>
+      </div>
+      <div class="city-banner-dates">Aug 2 (Sat) – Aug 6 (Wed)</div>
+    </div>
+
+    <div class="days-container">
+
+      <!-- DAY 10 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 10</span>
+          <span class="day-title">Osaka Castle + Kuromon + Den Den Town</span>
+          <span class="day-date">Monday, Aug 3</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">9:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Osaka Castle</div>
+              <div class="tl-desc">Go early before the heat. Striking castle (rebuilt 1931) in large park grounds — the
+                moat corners give the best exterior photos. Museum inside covers the castle's history through 7 floors
+                with good English signage. ¥600. ~1.5h total.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">11:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Kuromon Ichiba Market — lunch <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">Osaka's kitchen — 180+ stalls of fresh seafood, wagyu beef skewers, fresh crab legs,
+                oysters. Eat as you walk. Vendors hand you samples. Try: fresh uni (sea urchin) on a cracker, wagyu
+                skewer on the grill (~¥1,500), whole crab grilled while you wait. The most concentrated food experience
+                in Osaka outside Dotonbori.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">1:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Den Den Town <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">Osaka's electronics and anime district on Nipponbashi Street. Less touristy than
+                Akihabara — locals actually shop here. Joshin Super Kids Land: excellent for retro games and figures.
+                Nankai department store electronics floor. Good for final tech shopping — often slightly cheaper than
+                Akihabara for certain items. Check voltage compatibility before buying electronics.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">4:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Shinsekai retro district</div>
+              <div class="tl-desc">Old-school Osaka neighbourhood under Tsutenkaku Tower. Very local atmosphere — old
+                men playing shogi, cheap kushikatsu restaurants, vintage arcades. Completely different vibe from
+                touristy Dotonbori. Fugu (pufferfish) restaurants are everywhere here — try it if you're adventurous.
+              </div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Namba evening — canal by night</div>
+              <div class="tl-desc">Return to Dotonbori for dinner. The canal at night with all signs lit is the best
+                version of it. Kani Doraku crab restaurant, or standing yakiniku for wagyu grilled at the counter.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 11 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 11</span>
+          <span class="day-title">Universal Studios Japan + Super Nintendo World</span>
+          <span class="day-date">Tuesday, Aug 4</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-transit"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Depart early — JR Osaka Loop Line <span class="badge b-transit">~15 min</span></div>
+              <div class="tl-desc">JR Osaka Loop Line to Universal City Station (JR Pass). Aim to arrive at gates 15 min
+                before park opening (8am in summer). Weekday helps but July is peak — early arrival is critical.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-nintendo"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Super Nintendo World — FIRST <span class="badge b-nintendo">Go here
+                  immediately</span> <span class="badge b-book">Book tickets in advance</span></div>
+              <div class="tl-desc">Run to Nintendo World the moment gates open. It requires an Area Timed Entry pass —
+                grab it on the USJ app or kiosks immediately on entry. These sell out within 20 minutes. Do not go to
+                any other ride first. Mario Kart: Koopa's Challenge is the main AR ride (use Express Pass or expect 90+
+                min queue). Donkey Kong Country expansion (2024) — Mine Cart Madness coaster is worth the wait. Buy the
+                Power-Up Band wristband (¥3,500) — tracks coin blocks, boss battles, syncs with Nintendo Account. Eat at
+                Kinopio's Cafe for Question Block Tiramisu and Mushroom Soup.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">8–11:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-nintendo"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Nintendo World deep dive — spend 3 hours minimum</div>
+              <div class="tl-desc">Mario Kart ride, Yoshi's Adventure coaster, Donkey Kong coaster, all the interactive
+                coin blocks throughout the land. Compete in boss battles against Bowser. Get photos everywhere — this is
+                a once-in-a-trip experience. Check coin total on your wristband app.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">11:30 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Wizarding World of Harry Potter <span class="badge b-must">Must</span></div>
+              <div class="tl-desc">Hogsmeade Village is stunning architecture. Get: Frozen Butterbeer (better than
+                cold), watch the Ollivanders wand shop show. Ride: Harry Potter and the Forbidden Journey (walk through
+                Hogwarts + simulator — incredible) and Flight of the Hippogriff outdoor coaster. Use Express Pass for
+                Harry Potter ride — midday queues hit 2 hours.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">1:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Lunch + midday rest</div>
+              <div class="tl-desc">Three Broomsticks (Harry Potter zone) for a full sit-down meal. Sit down for 45 min
+                during the hottest part of the afternoon (2–3pm) — July at USJ is brutal heat.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">3:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Hollywood Dream + Jurassic Park</div>
+              <div class="tl-desc">Hollywood Dream coaster (backwards option is better — ask for it), Jurassic Park The
+                Ride if you want to get soaked (worth it in the heat). Minion Park for Despicable Me ride.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">5:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-nintendo"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Return to Nintendo World — evening pass</div>
+              <div class="tl-desc">Queues drop significantly after 4:30pm. Get back on Mario Kart, hit any coin blocks
+                you missed, explore Donkey Kong area again. The land looks different with evening lighting — stay until
+                close for the full experience.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:30 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Evening parade + return</div>
+              <div class="tl-desc">USJ summer evening show — check schedule at entrance. Last trains back from Universal
+                City ~11:30pm.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 12 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 12</span>
+          <span class="day-title">Umeda + Final Shopping + Farewell Dinner</span>
+          <span class="day-date">Wednesday, Aug 5</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Umeda Sky Building — floating garden</div>
+              <div class="tl-desc">Two towers connected at the top by an open circular sky walkway — 360° Osaka views,
+                more intimate than Skytree. Looks especially good in late morning before haze builds. ¥1,500.
+                Underground "Takimi-koji" alley below the building has excellent ramen shops for lunch after.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">12:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Osaka Station + Daimaru final shopping</div>
+              <div class="tl-desc">Last chance for quality Japanese purchases. Uniqlo flagship, Muji, Japanese skincare
+                and cosmetics, Kit-Kat Japan exclusive flavours (matcha, sake, wasabi — great gifts). Osaka omiyage to
+                bring home: Baton d'Or cookies, Glico caramel, takoyaki kits.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">3:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Dotonbori final afternoon walk</div>
+              <div class="tl-desc">Last stroll. Pick up anything missed. Get matcha soft serve or taiyaki (fish-shaped
+                cake, red bean or custard) for the walk. Good photo light before the evening crowds.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">7:00 pm</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-must"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Farewell dinner — splurge <span class="badge b-splurge">Book 1 week ahead</span>
+              </div>
+              <div class="tl-desc">Osaka is Japan's food capital. Do not eat cheap tonight. Options: Yoroniku
+                (exceptional wagyu yakiniku, ¥15,000+/person), Fujiya 1935 (Michelin 2-star kaiseki, reservations
+                essential), or a high-end sushi omakase counter. Budget ¥10,000–20,000/person. Worth every yen as a
+                final meal.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 13 -->
+      <div class="day">
+        <div class="day-header">
+          <span class="day-num">Day 13</span>
+          <span class="day-title">Departure</span>
+          <span class="day-date">Thursday, Aug 6</span>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">Morning</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Final morning — konbini breakfast</div>
+              <div class="tl-desc">7-Eleven, Lawson, or FamilyMart — Japan's convenience stores are genuinely excellent.
+                Coffee from the machine, onigiri, tamagoyaki sandwich. Last walk if time allows.</div>
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-left"><span class="tl-time">10:00 am</span></div>
+            <div class="tl-spine">
+              <div class="tl-dot-outer dot-transit"></div>
+              <div class="tl-line-seg"></div>
+            </div>
+            <div class="tl-body">
+              <div class="tl-title">Depart for airport — leave by 10am latest <span class="badge b-transit">Allow 90+
+                  min</span></div>
+              <div class="tl-desc">KIX (Kansai International): Haruka Express from Tennoji or Namba (~70 min, JR Pass).
+                ITM (Itami): Osaka Monorail connection or airport bus (~35 min). Factor in check-in, immigration, and
+                security for an afternoon international flight. Do not cut it close.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ HOTELS ═══════════════════════════════ -->
+  <div class="hotels-section">
+    <div class="hotels-section-title">Hotel recommendations</div>
+    <div class="hotels-section-sub">Max ~$200 CAD/night (~¥21,000). Prices listed in CAD approximate. Book directly or
+      via Booking.com / Hotels.com for best rates.</div>
+
+    <!-- TOKYO HOTELS -->
+    <div class="hotels-city">
+      <div class="hotels-city-label"><span class="city-dot dot-tokyo"></span>Tokyo · 5 nights · Jul 25–30 · Stay in
+        Shinjuku or Shibuya</div>
+      <div class="hotels-grid">
+
+        <div class="hotel-card top-pick">
+          <div class="hotel-pick-tag">Top Pick</div>
+          <div class="hotel-name">Shinjuku Granbell Hotel</div>
+          <div class="hotel-area">Shinjuku-ku, 5 min from station</div>
+          <div class="hotel-price">~$170 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Stylish boutique hotel with a strong design identity. Rooftop bar, well-sized rooms,
+            excellent Shinjuku location puts you walking distance from Omoide Yokocho, Golden Gai, and the JR hub.
+            Strong value at this price point.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Rooftop bar</span><span class="hotel-tag">Boutique</span><span
+              class="hotel-tag">Shinjuku hub</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">Hotel Gracery Shinjuku</div>
+          <div class="hotel-area">Kabukicho, Shinjuku</div>
+          <div class="hotel-price">~$150 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Famous for the Godzilla head on the roof terrace. Newer building, clean modern rooms,
+            excellent location directly above Kabukicho entertainment district. Great if you want to be in the middle of
+            the action.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Modern</span><span class="hotel-tag">Kabukicho</span><span
+              class="hotel-tag">Godzilla head</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">Tokyu Stay Shibuya</div>
+          <div class="hotel-area">Shibuya, near crossing</div>
+          <div class="hotel-price">~$160 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Reliable business hotel with in-room washer/dryer — genuinely useful for 12 days of
+            travel. 8 min walk to Shibuya Crossing. Clean, modern, no frills but excellent location for your Shibuya day
+            and Harajuku proximity.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Washer/dryer in room</span><span
+              class="hotel-tag">Shibuya</span><span class="hotel-tag">Reliable</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">Keio Presso Inn Shinjuku</div>
+          <div class="hotel-area">Shinjuku — budget option</div>
+          <div class="hotel-price">~$110 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Compact rooms, great location, immaculate. Best budget pick in Shinjuku that doesn't
+            feel like a budget hotel. Saves ~$300 over 5 nights vs the Granbell — puts more money toward Disneyland and
+            dinners.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Budget</span><span class="hotel-tag">Shinjuku</span><span
+              class="hotel-tag">Clean</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- KYOTO HOTELS -->
+    <div class="hotels-city">
+      <div class="hotels-city-label"><span class="city-dot dot-kyoto"></span>Kyoto · 3 nights · Jul 30 – Aug 2 · Stay
+        near Gion or Kawaramachi</div>
+      <div class="hotels-grid">
+
+        <div class="hotel-card top-pick">
+          <div class="hotel-pick-tag">Top Pick</div>
+          <div class="hotel-name">The Machiya Gion (various)</div>
+          <div class="hotel-area">Gion district — traditional townhouse</div>
+          <div class="hotel-price">~$180–200 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Stay in a renovated traditional machiya townhouse — wood beam ceilings, tatami rooms,
+            garden courtyard. Multiple operators in Gion list on Booking.com. Fundamentally different experience from a
+            hotel. You're sleeping in a 100+ year old Kyoto home. This is what Kyoto is supposed to feel like.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Traditional</span><span class="hotel-tag">Tatami</span><span
+              class="hotel-tag">Gion</span><span class="hotel-tag">Unique</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">Piece Hostel Kyoto</div>
+          <div class="hotel-area">Kawaramachi — private rooms</div>
+          <div class="hotel-price">~$120 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Private rooms available (not dorms) in a well-designed hostel. Extremely central,
+            excellent staff who give good local tips. Great social common area if you want to meet other travellers. 5
+            min walk to Nishiki Market.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Social</span><span class="hotel-tag">Central</span><span
+              class="hotel-tag">Good value</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">ibis Styles Kyoto Station</div>
+          <div class="hotel-area">Kyoto Station area</div>
+          <div class="hotel-price">~$140 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Modern, reliable, excellent for transport connections. 2 min walk to Kyoto Station
+            makes the Fushimi Inari early morning easy (JR Inari Station is one stop from here). Not as atmospheric as
+            Gion but very practical for your itinerary.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Station access</span><span
+              class="hotel-tag">Modern</span><span class="hotel-tag">Reliable</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">Hotel Monterey Kyoto</div>
+          <div class="hotel-area">Karasuma — central</div>
+          <div class="hotel-price">~$160 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">European-themed interior (unusual for Kyoto but well-executed). Good-sized rooms,
+            central location between Nijo Castle and Gion. Well-reviewed for cleanliness. Solid mid-range pick if the
+            machiya is fully booked.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Central</span><span class="hotel-tag">Spacious
+              rooms</span><span class="hotel-tag">Mid-range</span></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- OSAKA HOTELS -->
+    <div class="hotels-city">
+      <div class="hotels-city-label"><span class="city-dot dot-osaka"></span>Osaka · 3 nights + departure · Aug 2–6 ·
+        Stay near Namba or Shinsaibashi</div>
+      <div class="hotels-grid">
+
+        <div class="hotel-card top-pick">
+          <div class="hotel-pick-tag">Top Pick</div>
+          <div class="hotel-name">Cross Hotel Osaka</div>
+          <div class="hotel-area">Shinsaibashi — 2 min to Dotonbori</div>
+          <div class="hotel-price">~$150 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Stylish design hotel with excellent Namba/Dotonbori walking access. Well-designed
+            rooms with good soundproofing (the area is loud at night). Rooftop area, solid breakfast, easy USJ access
+            via JR from nearby Shinsaibashi. Best all-around Osaka pick at this price.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Dotonbori walking</span><span class="hotel-tag">Design
+              hotel</span><span class="hotel-tag">Rooftop</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">Dormy Inn Premium Namba</div>
+          <div class="hotel-area">Namba — hot spring bath</div>
+          <div class="hotel-price">~$140 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Japanese business hotel chain known for excellent facilities — in-house onsen (hot
+            spring bath) on the top floor, late-night ramen service, great breakfast. Rooms are compact but the
+            facilities are worth it. After USJ and full walking days, the onsen is outstanding.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Onsen bath</span><span class="hotel-tag">Late-night
+              ramen</span><span class="hotel-tag">Namba</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">The Millennials Osaka</div>
+          <div class="hotel-area">Shinsaibashi — smart pod hotel</div>
+          <div class="hotel-price">~$120 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Premium smart pod concept — individual pods with iPad control, personal lighting and
+            TV, excellent privacy. Excellent location, very popular with young travellers. Unique experience. Not for
+            anyone with claustrophobia but otherwise interesting.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Smart pod</span><span class="hotel-tag">Unique</span><span
+              class="hotel-tag">Central</span></div>
+        </div>
+
+        <div class="hotel-card">
+          <div class="hotel-name">Candeo Hotels Osaka Namba</div>
+          <div class="hotel-area">Namba — sky bath</div>
+          <div class="hotel-price">~$170 CAD <span>/ night avg</span></div>
+          <div class="hotel-desc">Good-sized modern rooms and the signature Candeo sky-view open-air bath on the rooftop
+            — great for unwinding after long days. Well-reviewed service, easy Namba access. Excellent if you want more
+            space and a rooftop experience.</div>
+          <div class="hotel-tags"><span class="hotel-tag">Sky bath</span><span class="hotel-tag">Spacious</span><span
+              class="hotel-tag">Namba</span></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════ BOOKING CHECKLIST ═══════════════════════════════ -->
+  <div class="booking-section">
+    <div class="booking-title">Book before you leave Canada</div>
+    <div class="booking-grid">
+      <div class="booking-item">
+        <div class="booking-check"></div>
+        <div class="booking-text"><strong>JR Pass 14-day</strong>Buy from an authorized reseller in Canada — cheaper
+          outside Japan. Covers all shinkansen + JR lines.</div>
+      </div>
+      <div class="booking-item">
+        <div class="booking-check"></div>
+        <div class="booking-text"><strong>Tokyo Disneyland tickets</strong>Official Tokyo Disney Resort site. July dates
+          sell out — book the moment you confirm travel dates.</div>
+      </div>
+      <div class="booking-item">
+        <div class="booking-check"></div>
+        <div class="booking-text"><strong>Universal Studios Japan tickets</strong>Official USJ site. Buy the 1-Day
+          Studio Pass + Express Pass 7 together. Summer slots go fast.</div>
+      </div>
+      <div class="booking-item">
+        <div class="booking-check"></div>
+        <div class="booking-text"><strong>te
